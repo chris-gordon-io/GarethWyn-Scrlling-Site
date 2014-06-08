@@ -1,0 +1,324 @@
+/*!
+    Theme Name: Gareth Griffiths
+    Author: Chris Gordon
+    Version: 1.0
+    License: The MIT License (MIT)
+*/
+
+
+//----------------------------------------------------------------------------//
+//  Setup
+//----------------------------------------------------------------------------//
+
+
+@charset "UTF-8";
+@import "reset.less";
+@import "vars.less";
+@import "helpers.less";
+@import "grid.less";
+
+@font-face {
+    font-family: 'Dosis-Light';
+    src: url('fonts/Dosis-Light.eot');
+    src: url('fonts/Dosis-Light.eot?#iefix') format('embedded-opentype'),
+    url('fonts/Dosis-Light.woff') format('woff'),
+    url('fonts/Dosis-Light.ttf') format('truetype');
+}
+
+
+::-moz-selection {
+    background:@color-highlight;
+    color:#fff;
+    text-shadow:none;
+}
+::selection {
+    background:@color-highlight;
+    color:#fff;
+    text-shadow:none;
+}
+
+
+//----------------------------------------------------------------------------//
+//  Typography
+//----------------------------------------------------------------------------//
+
+
+body {
+    font-family:@font-family-base;
+    font-size:@font-size-base;
+    line-height:@line-height-base;
+    color:@color-text;
+    font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 200;
+}
+
+p { margin-bottom:@space; }
+
+.main-heading {
+    font-family: 'Abel', sans-serif;
+    font-weight:normal;
+    letter-spacing: 0.1em;
+    font-size:@font-size-med;
+    text-transform:uppercase;
+    margin-bottom:@space;
+    &.dark { color:#666; }
+    &.light { color:#ccc; }
+}
+
+h1 {
+    font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight:200;
+    text-align: center;
+    font-size:@font-size-large;
+    margin-bottom:(2*@space);
+    letter-spacing: 0.05em;
+    line-height: @line-height-small;
+}
+
+h3 {
+    font-family: 'Abel', sans-serif;
+    font-weight:normal;
+    letter-spacing: 0.1em;
+    font-size:@font-size-large;
+    text-align: center;
+    text-transform:uppercase;
+    margin-bottom:@space;
+    color:@color-text;
+    border-bottom: 1px solid @color-text ;
+}
+
+.social-media {
+    font-family: 'Abel', sans-serif;
+    font-weight:normal;
+    letter-spacing: 0.1em;
+    font-size:@font-size-base;
+    text-transform:uppercase;
+    margin-bottom:@space;
+    color:#fff;
+    text-align: center; 
+    background-color: @color-link; 
+    padding: 10% 0% 10% 0%;
+    vertical-align: middle;
+}
+
+.sm-titles {
+    font-family: 'Abel', sans-serif;
+    font-weight:normal;
+    letter-spacing: 0.1em;
+    font-size:@font-size-base;
+    text-transform:uppercase;
+    margin-bottom:@space;
+    color:@color-link; 
+    text-align: center; 
+    vertical-align: middle;
+}
+
+.footer-text {
+    font-family: 'Abel', sans-serif;
+    font-weight:normal;
+    letter-spacing: 0.1em;
+    font-size:@font-size-mini;
+    text-transform:uppercase;
+    color:@color-link; 
+    text-align: center; 
+    vertical-align: middle;
+}
+
+
+
+
+
+//----------------------------------------------------------------------------//
+//  Links
+//----------------------------------------------------------------------------//
+
+
+a:link,
+a:visited {
+    color:@color-link;
+    text-decoration:none;
+}
+a:hover,
+a:focus,
+a:active {
+    color:@color-link-hover;
+    text-decoration:none;
+    outline:none;
+}
+
+
+//----------------------------------------------------------------------------//
+//  Forms & Buttons
+//----------------------------------------------------------------------------//
+
+
+input[type='text'],
+input[type='email'],
+input[type='password'],
+textarea {
+    padding:(@space/2);
+    border:none;
+    .placeholder();
+}
+
+input[type='text']:hover,
+input[type='email']:hover,
+input[type='password']:hover,
+textarea:hover {
+
+}
+
+input[type='text']:focus,
+input[type='email']:focus,
+input[type='password']:focus,
+textarea:focus {
+    outline:none;
+    // Define your own focus styles here
+}
+
+
+//----------------------------------------------------------------------------//
+//  Header
+//----------------------------------------------------------------------------//
+
+
+.page-header {
+    .position(fixed,0,0,auto,0);
+    z-index:1;
+    background-color: #fff;
+    opacity:0.8;
+    filter:alpha(opacity=80); /* For IE8 and earlier */
+    .logos a {
+        text-indent:-110%;
+        direction: ltr;
+        overflow:hidden;
+        display:inline-block;
+        overflow:hidden;
+        height:40px;
+        margin-top: 8px;
+        border:1px solid red;
+    }
+    
+    .scroll-nav {
+        a {
+            padding:8px;
+            display:inline-block;
+            font-family: 'Abel', sans-serif;
+            font-weight:normal;
+            letter-spacing: 0.1em;
+            text-transform:uppercase;
+            &:hover {color: @color-highlight}
+            &.book-tickets {
+                background: @color-highlight;
+                &:hover {
+                    color: #262626;
+                }
+                @media (max-width:@break-small) {
+                    display:none;
+                }
+            }
+        }
+        @media (max-width:@break-small) {
+            margin:0 -@space;
+            display:none;
+            a {
+                padding:(@space/2) @space;
+                display:block;
+                &.book-tickets { float:none; }
+            }
+        }
+        @media (min-width:@break-small) {
+            display:block!important;
+        }
+    }
+}
+
+ .mobile-menu {
+        display:none;
+        @media (max-width:@break-small) {
+            display:block;
+        }
+        .nav-toggle {
+            .size(20px, 15px);
+            .retina-image("img/hamburger.png", "img/hamburger@2x.png", 20px, 15px);
+            margin:@space 0;
+        }
+        
+    }
+
+
+
+
+//----------------------------------------------------------------------------//
+//  Content
+//----------------------------------------------------------------------------//
+
+
+.page-section {
+    padding:@space 0;
+    &.dark { background:#f3f3f3; }
+    &.light { background:#fff; }
+    &.footer { background:#000; }
+    &.first { padding-top:0px; height: 0px; padding-bottom:66%; .grad-vertical(#000,#666);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+}
+
+hr {
+    height:1px;
+    border:none;
+    border-top:1px solid;
+    margin:0 0 @space 0;
+    &.light { border-color:#ccc; }
+    &.dark { border-color:#333; }
+}
+
+.large {
+    width:100%; // change this to make them bigger / smaller
+    height:auto;
+    margin:0 auto @space;
+    display:block;
+}
+
+.med {
+    width:50%; // change this to make them bigger / smaller
+    height:auto;
+    margin:(2*@space) auto @space;
+    display:block;
+}
+
+.logo {
+    width:70%; // change this to make them bigger / smaller
+    padding-top: 26%;
+    margin:0 auto @space;
+    display: block;
+}
+
+
+
+//----------------------------------------------------------------------------//
+//  Flickr
+//----------------------------------------------------------------------------//
+
+.flickr_badge {
+    width:100%;
+ 
+
+}
+
+.flickr_badge img {
+    padding: (@space/4);
+    border: 0px solid black !important;
+
+}
+
+
+//----------------------------------------------------------------------------//
+//  Slideshow
+//----------------------------------------------------------------------------//
+
+
+.fadein { position:relative; }
+.fadein img { position:absolute; left:0; top:0; width:100%; }
