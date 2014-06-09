@@ -169,7 +169,7 @@
     
         <div class="row">
             <div class="col-sm-12">
-               <h1 class="flickr_badge text-center"><script type="text/javascript" src="https://www.flickr.com/badge_code_v2.gne?count=9&display=latest&size=m&layout=h&source=user_set&user=46902543%40N04&set=72157623156642743&context=in%2Fset-72157623156642743%2F"></script></h1> 
+               <h1 class="flickr_badge text-center"><script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=10&display=latest&size=m&layout=x&source=user_set&set=72157623281277436"></script></h1> 
             </div>
         </div>
 

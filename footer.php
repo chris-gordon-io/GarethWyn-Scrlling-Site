@@ -19,6 +19,7 @@
         echo '<script src ="' . $theme . '/js/bower/jquery/dist/jquery.js"></script>';
         echo '<script src ="' . $theme . '/js/bower/modernizr/modernizr.js"></script>';
         echo '<script src ="' . $theme . '/js/bower/jquery-smartresize/jquery.debouncedresize.js"></script>';
+        echo '<script src ="' . $theme . '/js/instafeed.js"></script>';
         echo '<script src ="' . $theme . '/js/project.js"></script>';
 
     }

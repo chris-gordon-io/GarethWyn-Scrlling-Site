@@ -5,10 +5,20 @@
 
         init: function () {
             this.bindUIActions();
+            this.setupinstafeed();
         },
 
         bindUIActions: function () {
             $(".scroll-nav a").on("click", function (e) { wpstarter.scrollToSection(e); });
+        },
+
+        setupinstafeed: function () {
+            var userFeed = new Instafeed({
+                get: "9078198",
+                userId: "chrisg116",
+                accessToken: "9078198.467ede5.b70bd64601fb4ea1ab3a7c34e85f1fd4"
+            });
+            userFeed.run();
         },
 
         windowLoaded: function () {
@@ -27,10 +37,12 @@
             e.preventDefault();
 
             var destination = (e.currentTarget.hash);
-            var offset = $(destination)[0].offsetTop - 55;
+            var offset = $(destination)[0].offsetTop - 35;
 
             $("body").animate({ scrollTop: offset }, 600);
         }
+
+
 
     };
 
@@ -59,14 +71,6 @@
 
 } (jQuery));
 
-< script type="text/javascript" >
-var feed = new Instafeed({
-    get: "9078198",
-    userId: chrisg116,
-    accessToken: "9078198.467ede5.b70bd64601fb4ea1ab3a7c34e85f1fd4"
-});
-userFeed.run();
-</script>
 
 
 

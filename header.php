@@ -25,7 +25,6 @@
 </head>
 
 <link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
-<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/instafeed.min.js"></script>
 
 <body>
 
