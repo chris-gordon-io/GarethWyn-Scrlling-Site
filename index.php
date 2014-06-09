@@ -3,9 +3,10 @@
 <section id="home" class="page-section first">
 
 <div class="fadein">
-  <img src="https://dl.dropboxusercontent.com/u/1304706/g-wyn-01.jpg">
-  <img src="http://farm3.static.flickr.com/2597/4121218611_040cd7b3f2.jpg">
-  <img src="http://farm3.static.flickr.com/2531/4121218751_ac8bf49d5d.jpg">
+  <img src="<?php bloginfo('template_url'); ?>/img/gareth-wyn-02.jpg">
+  <img src="<?php bloginfo('template_url'); ?>/img/gareth-wyn-01.jpg">
+  <img src="<?php bloginfo('template_url'); ?>/img/gareth-wyn-03.jpg">
+  <img src="<?php bloginfo('template_url'); ?>/img/gareth-wyn-04.jpg">
 </div>
 
     <div class="container">
@@ -157,9 +158,7 @@
     <div class="container">
         <h1 class="main-heading dark text-center">Photos</h1>
         <div class="row">
-            <div class="col-sm-12">
-               <h1 class="intro">COMING SOON</h1>
-            </div>
+            <div id="instafeed" class="col-sm-12"></div>
         </div>    
     </div>
 </section>
