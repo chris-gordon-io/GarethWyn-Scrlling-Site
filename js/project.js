@@ -5,17 +5,25 @@
 
         init: function () {
             this.bindUIActions();
+            this.setupslideshow();
             this.setupinstafeed();
         },
 
         bindUIActions: function () {
-            $(".scroll-nav a").on("click", function (e) { wpstarter.scrollToSection(e); });
+            $(".scroll-nav a[href*=#]").on("click", function (e) { wpstarter.scrollToSection(e); });
+        },
+
+        setupslideshow: function () {
+            $(".fadein img:gt(0)").hide();
+            setInterval(function () {
+                $(".fadein :first-child").fadeOut().next("img").fadeIn().end().appendTo(".fadein");
+            }, 3000);
         },
 
         setupinstafeed: function () {
             var userFeed = new Instafeed({
-                get: "9078198",
-                userId: "chrisg116",
+                get: "user",
+                userId: 9078198,
                 accessToken: "9078198.467ede5.b70bd64601fb4ea1ab3a7c34e85f1fd4"
             });
             userFeed.run();
@@ -41,9 +49,6 @@
 
             $("body").animate({ scrollTop: offset }, 600);
         }
-
-
-
     };
 
     // DOM Ready
@@ -54,20 +59,6 @@
     $(window).bind("debouncedresize", function () { wpstarter.windowResized(); });
     // Window Scrolled
     $(window).on("scroll", function () { wpstarter.windowScrolled(); });
-    //link fix?
-    $("nav a[href*=#]");
-    //Slideshow
-
-
-    $(function () {
-        $(".fadein img:gt(0)").hide();
-        setInterval(function () {
-            $(".fadein :first-child").fadeOut()
-         .next("img").fadeIn()
-         .end().appendTo(".fadein");
-        },
-        3000);
-    });
 
 } (jQuery));
 
