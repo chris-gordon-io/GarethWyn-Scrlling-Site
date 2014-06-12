@@ -5,11 +5,19 @@
 
         init: function () {
             this.bindUIActions();
+            this.setupslideshow();
             this.setupinstafeed();
         },
 
         bindUIActions: function () {
-            $(".scroll-nav a").on("click", function (e) { wpstarter.scrollToSection(e); });
+            $(".scroll-nav a[href*=#]").on("click", function (e) { wpstarter.scrollToSection(e); });
+        },
+
+        setupslideshow: function () {
+            $(".fadein img:gt(0)").hide();
+            setInterval(function () {
+                $(".fadein :first-child").fadeOut().next("img").fadeIn().end().appendTo(".fadein");
+            }, 3000);
         },
 
         setupinstafeed: function () {
@@ -41,9 +49,6 @@
 
             $("body").animate({ scrollTop: offset }, 600);
         }
-
-
-
     };
 
     // DOM Ready
@@ -54,20 +59,6 @@
     $(window).bind("debouncedresize", function () { wpstarter.windowResized(); });
     // Window Scrolled
     $(window).on("scroll", function () { wpstarter.windowScrolled(); });
-    //link fix?
-    $("nav a[href*=#]");
-    //Slideshow
-
-
-    $(function () {
-        $(".fadein img:gt(0)").hide();
-        setInterval(function () {
-            $(".fadein :first-child").fadeOut()
-         .next("img").fadeIn()
-         .end().appendTo(".fadein");
-        },
-        3000);
-    });
 
 } (jQuery));
 
