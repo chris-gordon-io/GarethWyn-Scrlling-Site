@@ -14,8 +14,8 @@
 
         setupinstafeed: function () {
             var userFeed = new Instafeed({
-                get: "9078198",
-                userId: "chrisg116",
+                get: "user",
+                userId: 9078198,
                 accessToken: "9078198.467ede5.b70bd64601fb4ea1ab3a7c34e85f1fd4"
             });
             userFeed.run();
